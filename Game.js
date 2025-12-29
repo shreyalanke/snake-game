@@ -16,7 +16,7 @@ class Game {
             this.board.push(row);
         }
 
-        this.board[Math.floor(this.height / 2)][Math.floor(this.width / 2)] = 10;
+        this.board[Math.floor(this.height / 2)][Math.floor(this.width / 2)] = 5;
 
     }
 
@@ -58,27 +58,39 @@ class Game {
         let isEating = false;
 
         if (this.direction == 'N') {
-            if (this.board[head.x][head.y - 1] == -1) {
-                isEating = true;
+            if (head.y - 1 >= 0) {
+                if (this.board[head.x][head.y - 1] == -1) {
+                    isEating = true;
+                }
             }
+
         }
 
         if (this.direction == 'S') {
-            if (this.board[head.x][head.y + 1] == -1) {
-                isEating = true;
+            if (head.y + 1 < this.height) {
+                if (this.board[head.x][head.y + 1] == -1) {
+                    isEating = true;
+                }
             }
+
         }
 
         if (this.direction == 'E') {
-            if (this.board[head.x + 1][head.y] == -1) {
-                isEating = true;
+            if (head.x + 1 < this.width) {
+                if (this.board[head.x + 1][head.y] == -1) {
+                    isEating = true;
+                }
             }
+
         }
 
         if (this.direction == 'W') {
-            if (this.board[head.x - 1][head.y] == -1) {
-                isEating = true;
+            if (head.x - 1 >= 0) {
+                if (this.board[head.x - 1][head.y] == -1) {
+                    isEating = true;
+                }
             }
+
         }
 
 

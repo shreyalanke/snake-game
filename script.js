@@ -5,7 +5,7 @@ let cellSize = 500 / gameSize;
 
 function setup() {
    createCanvas(500, 500);
-   frameRate(5);
+   frameRate(7);
    background(220);
    game = new Game(gameSize);
 }
